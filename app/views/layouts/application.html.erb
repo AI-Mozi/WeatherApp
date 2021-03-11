@@ -10,6 +10,40 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <p class="notice center-align"><%= notice %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert center-align"><%= alert %></p>
+    <% end %>
+
+    <nav class="nav">
+      <div class="nav-wrapper">
+        <%= link_to root_path, :class => "brand-logo" do %>
+          <b>Weather <span class="hide-on-small-and-down">App</span></b>
+        <% end %>
+
+        <a href="" data-target="slide-out" class="sidenav-trigger">
+		      <i class="material-icons">menu</i>
+	      </a>
+        
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <%= render "layouts/navbar" %>
+        </ul>
+      </div>
+    </nav>
+
+    <ul id="slide-out" class="sidenav">
+      <div class="brand-logo-mobile">
+        <div class="test">
+          <%= link_to root_path do %>
+            <h4>Weather App</h4>
+        <% end %>
+        </div>
+        <%= render "layouts/navbar" %>
+      </div>
+    </ul>
+
     <%= yield %>
   </body>
 </html>
