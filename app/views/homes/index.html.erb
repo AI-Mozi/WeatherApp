@@ -1,1 +1,10 @@
-<h1>HOME</h1>
+<div class="index-background">  
+  <div class="row home-wrapper valign-wrapper">
+    <div class="col s12 m6 offset-m3 center-align index-form">
+      <%= form_tag('/locations/1', method: "patch") do%>
+        <%= text_field_tag :name, "", class: 'index-input' %>
+        <%= submit_tag 'check the weather', class: 'blue-grey darken-2 btn'%>
+      <% end %>
+    </div>
+  </div>
+</div>
