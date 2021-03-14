@@ -15,12 +15,24 @@
  */
  @import "materialize";
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
+
+ *{
+  font-family: 'Open Sans Condensed', sans-serif;
+ }
 .index-background{
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-image: url("https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   height: 100vh;
+}
+.location-index-background{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/391522/pexels-photo-391522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  padding-top: 50px;
 }
 .home-wrapper{
   height: 100vh;
@@ -52,4 +64,21 @@
   margin: 0;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.cu-forecast, 
+.td-forecast,
+.wk-forecast{
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+.main-text{
+  padding: 10px;
+  text-transform: uppercase;
+}
+.week-col{
+  width: 12%;
+  border: 1px solid black;
+  float: left;
+  margin-right: 0.25%;
+  margin-left: 0.25%;
 }

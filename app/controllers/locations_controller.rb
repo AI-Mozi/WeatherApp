@@ -2,11 +2,13 @@ require 'pry'
 class LocationsController < ApplicationController
   def index
     show_locations
-    render(:index)
+    @info = FetchWeatherInfo.call(show_locations)
+    @current = @info["current"]
+    @today = @info["hourly"]
+    @week = @info["daily"]
   end
 
   def update
-    flash[:notice] = "You just added a location!"
     add_location(params[:name])
     redirect_to locations_url 
   end
