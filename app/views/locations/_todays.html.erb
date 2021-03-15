@@ -1,0 +1,8 @@
+<h4 class="center-align main-text">hourly forecast</h4>
+<div class='row hourly'>
+  <% @today.each do |today| %>
+    <div class="hour">
+      <%= sun(today["dt"]) %>
+    </div>
+  <%end%>
+</div>
