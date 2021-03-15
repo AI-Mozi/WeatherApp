@@ -1,7 +1,7 @@
 require 'pry'
 class LocationsController < ApplicationController
   def index
-    show_locations
+    @location = show_locations
     @info = FetchWeatherInfo.call(show_locations)
     @current = @info["current"]
     @today = @info["hourly"]

@@ -2,29 +2,17 @@
   <div class="container">
     <div class="row">
       <div class="cu-forecast">
-        <h4 class="center-align main-text">current forecast</h4>
-        <%= @current %>
-        
-        <div class="col s7"></div>
-        <div class="col s5"><%= dt(@current["dt"]) %></div>
+          <%= render 'current' %>
       </div>
     </div>
     <div class="row">
       <div class="td-forecast">
-        <h4 class="center-align main-text">today's forecast</h4>
-        <%#= @today %>
+        <%= render 'todays' %>
       </div>
     </div>
     <div class="row">
       <div class="wk-forecast">
-        <h4 class="center-align main-text">weekly forecast</h4>
-        <% @week.each do |day| %>
-          <div class="week-col">
-            <%#= dt(day["dt"]) %>
-            <%= day %>
-          </div>
-        <% end %>
-        <p>.</p>
+        <%= render 'weekly' %>
       </div>
     </div>
   </div>
