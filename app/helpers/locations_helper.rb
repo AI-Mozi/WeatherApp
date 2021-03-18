@@ -10,4 +10,8 @@ module LocationsHelper
   def sun(timezone)
     Time.at(timezone).strftime("%H:%M")
   end
+
+  def hourly(timezone)
+    Time.at(timezone).strftime("%d %B")
+  end
 end

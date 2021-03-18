@@ -7,16 +7,17 @@ class FetchWeatherInfo < ApplicationService
   end
 
   def call
-    lon = check_coords["lon"]
-    lat = check_coords["lat"]
-    @todays_weather_info = RestClient.get("https://api.openweathermap.org/data/2.5/onecall?lat=#{lat}&lon=#{lon}&exclude=minutely&&units=metric&appid=#{api_key}")
-    return @parsed_todays_weather_info = JSON.parse(@todays_weather_info)
-  end
+    url = "api.openweathermap.org/data/2.5/weather?q=#{name[0]}&appid=#{api_key}"
 
-  def check_coords
-    @weather_info = RestClient.get("api.openweathermap.org/data/2.5/weather?q=#{name[0]}&appid=#{api_key}")
-    @coords = JSON.parse(@weather_info)
-    return @coords["coord"]
+    weather_info = RestClient::Request.execute(method: 'get', url: url)
+    cords = JSON.parse(weather_info)["coord"]
+    
+    wurl = "https://api.openweathermap.org/data/2.5/onecall?lat=#{cords["lat"]}&lon=#{cords["lon"]}&exclude=minutely&&units=metric&appid=#{api_key}"
+    todays_weather_info = RestClient::Request.execute(method: 'get', url: wurl)
+    
+    return parsed_todays_weather_info = JSON.parse(todays_weather_info)
+  rescue RestClient::Exception
+    return nil
   end
 
   private

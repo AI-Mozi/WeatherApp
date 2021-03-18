@@ -29,6 +29,7 @@ html{
   background-size: 100% 100%;
   background-image: url("https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-attachment: fixed;
+  padding-bottom: 30px;
 }
 .location-index-background{
   background-repeat: no-repeat;
@@ -124,6 +125,20 @@ html{
   display: flex;
 }
 .hour{
+  flex: 0 0 auto;
   flex-direction: column;
-  width: 100px !important; 
+  width: 130px !important; 
+  text-align: center;
+  border-left: 1px solid black;
+  margin-bottom: 10px;
+}
+.notice{
+  background-color: #00D1B2;
+  margin: 0;
+  padding: 8px;
+}
+.alert{
+  background-color: #FF3860;
+  margin: 0;
+  padding: 8px;
 }

@@ -2,7 +2,26 @@
 <div class='row hourly'>
   <% @today.each do |today| %>
     <div class="hour">
-      <%= sun(today["dt"]) %>
+      <%= hourly(today["dt"]) %></br>
+      <%= sun(today["dt"]) %></br>
+
+      <% today["weather"].each do |tw| %>
+        <img src=<%= image(tw["icon"], "@2x") %>></br>
+        <span><%= tw["description"] %></span></br>
+      <% end %>
+
+      <span></span></br>
+      <span>TEMP: <%= today["temp"]%>&deg;C</span></br>
+      <span>FEELS LIKE: <%= today["feels_like"]%>&deg;C</span></br>
+      <br>
+      <span>PRESSURE:</span>
+      <%= today["pressure"] %> hPa</br>
+      <span>HUMIDITY:</span>
+      <%= today["humidity"] %> %</br>
+      <span>WIND SPEED:</span>
+      <%= today["wind_speed"] %>m/s</br>
+      <span>WIND DEGRESS:</span>
+      <%= today["wind_deg"] %></br>
     </div>
   <%end%>
 </div>
