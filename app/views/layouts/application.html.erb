@@ -10,23 +10,30 @@
   </head>
 
   <body>
-  <% if controller.controller_name != "homes"%>
-    <nav class="nav">
-      <div class="nav-wraper">
-        <%= link_to root_path, :class => "brand-logo" do %>
-          <b>Weather App</b>
-        <% end %>
-        <div class="right">
-          <%= form_tag('/locations/1', method: "patch") do%>
-            <table><tr>
-              <td><%= text_field_tag :name, "", class: 'index-input' %></td>
-              <td><%= submit_tag 'change city', class: 'blue-grey darken-2 btn-small submit-button' %> </td> 
-            </tr></table>
+    <% if flash[:notice] %>
+      <p class="notice center-align"><%= notice %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert center-align"><%= alert %></p>
+    <% end %>
+
+    <% if controller.controller_name != "homes"%>
+      <nav class="nav">
+        <div class="nav-wraper">
+          <%= link_to root_path, :class => "brand-logo" do %>
+            <b>Weather App</b>
           <% end %>
+          <div class="right">
+            <%= form_tag('/locations/1', method: "patch") do%>
+              <table><tr>
+                <td><%= text_field_tag :name, "", class: 'index-input' %></td>
+                <td><%= submit_tag 'change city', class: 'blue-grey darken-2 btn-small submit-button' %> </td> 
+              </tr></table>
+            <% end %>
+          </div>
         </div>
-      </div>
-    </nav>
-  <% end %>
+      </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
