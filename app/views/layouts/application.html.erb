@@ -26,7 +26,7 @@
           <div class="right">
             <%= form_tag('/locations/1', method: "patch") do%>
               <table><tr>
-                <td><%= text_field_tag :name, "", class: 'index-input' %></td>
+                <td><%= text_field_tag :name, "", class: 'index-input', :input_html => {:maxlength => 15, :size => 40}, placeholder: "Enter the city name without any special characters"  %></td>
                 <td><%= submit_tag 'change city', class: 'blue-grey darken-2 btn-small submit-button' %> </td> 
               </tr></table>
             <% end %>

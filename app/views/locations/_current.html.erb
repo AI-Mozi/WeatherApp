@@ -1,7 +1,7 @@
 <h4 class="center-align main-text">current forecast</h4>
 <div class="col s4 cu-left">
   <%= dt(@current["dt"]) %>
-  <h1><%= @location.capitalize %></h1>
+  <h1><%= @location.split.map(&:capitalize).join(' ') %></h1>
   <h3><%= @current["temp"] %>&deg;C</h3>
   <h6>feels like: <%= @current["feels_like"]%>&deg;C</h6>
 </div>
