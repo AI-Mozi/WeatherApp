@@ -16,8 +16,12 @@ class FetchWeatherInfo < ApplicationService
     todays_weather_info = RestClient::Request.execute(method: 'get', url: wurl)
     
     return parsed_todays_weather_info = JSON.parse(todays_weather_info)
-  rescue RestClient::Exception
-    return nil
+    
+    rescue RestClient::Exception
+      return nil
+      
+    rescue URI::InvalidURIError
+      return nil
   end
 
   private

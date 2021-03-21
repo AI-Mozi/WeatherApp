@@ -2,7 +2,7 @@
   <div class="row home-wrapper valign-wrapper">
     <div class="col s12 m6 offset-m3 center-align index-form">
       <%= form_tag('/locations/1', method: "patch") do%>
-        <%= text_field_tag :name, "", class: 'index-input' %>
+        <%= text_field_tag :name, "", class: 'index-input', :input_html => {:maxlength => 15, :size => 40}, placeholder: "Enter the city name without any special characters" %>
         <%= submit_tag 'check the weather', class: 'blue-grey darken-2 btn'%>
       <% end %>
     </div>
