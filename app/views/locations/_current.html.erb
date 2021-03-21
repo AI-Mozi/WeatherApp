@@ -15,9 +15,10 @@
   <span class="info">humidity: <%= @current["humidity"] %>%</span>
 </div>
 <div class="col s3 cu-right">
-  <% @current["weather"].each do |weather| %>
+  <% weather = @current["weather"].first %>
+
   <img src=<%=image(weather["icon"], "@4x")%>>
-  <p class="centered"><%= weather["description"].upcase %></p>
-  <% end %></br>
+  <p class="centered"><%= weather["description"].upcase %></p>  
+
 </div>
 <p>.</p>
