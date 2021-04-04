@@ -1,4 +1,3 @@
-require 'pry'
 class FetchWeatherInfo < ApplicationService
   attr_accessor :name
 
