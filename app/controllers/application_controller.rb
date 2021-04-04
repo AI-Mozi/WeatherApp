@@ -1,5 +1,3 @@
-require 'pry'
-
 class ApplicationController < ActionController::Base
   def location
     session[:location] ||= []

@@ -1,4 +1,3 @@
-require 'pry'
 class LocationsController < ApplicationController
   def index
     @location = show_locations[0]
